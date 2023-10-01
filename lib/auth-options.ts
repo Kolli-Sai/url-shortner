@@ -1,4 +1,4 @@
-import { type AuthOptions } from "next-auth";
+import { getServerSession, type AuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import { getNextAuthCredentials } from "./secrets";
 
@@ -31,4 +31,9 @@ export const authOptions: AuthOptions = {
     signIn: "/auth/signin",
     signOut: "/auth/signout",
   },
+};
+
+export const getAuthSession = async () => {
+  const session = await getServerSession(authOptions);
+  return {session};
 };

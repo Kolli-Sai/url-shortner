@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import Navbar from "@/components/navbar";
 import Layout from "@/components/layout";
 import { Divider } from "@nextui-org/divider";
-
+import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <Providers>
+          <Toaster expand={false} richColors position="top-center" />
           <Layout>
             <Navbar />
           </Layout>

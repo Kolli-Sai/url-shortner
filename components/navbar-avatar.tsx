@@ -12,21 +12,28 @@ import { Avatar } from "@nextui-org/avatar";
 import { useRouter } from "next/navigation";
 import { LogOut } from "lucide-react";
 import NextLink from "next/link";
-type Props = {};
+type Props = {
+  image: string;
+  email : string;
+};
 
 const NavbarAvatar = (props: Props) => {
   const router = useRouter();
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Avatar
-          isBordered
-          color="primary"
-          src="https://i.pravatar.cc/150?u=a04258114e29026302d"
-        />
+        <Avatar isBordered color="primary" src={props.image} />
       </DropdownTrigger>
-      <DropdownMenu aria-label="Static Actions">
-        <DropdownItem key="profile">Profile</DropdownItem>
+      <DropdownMenu
+        variant="bordered"
+        color="primary"
+        aria-label="Static Actions"
+        disabledKeys={["profile"]}
+      >
+        <DropdownItem key="profile">
+          Signed in as <br />
+          <strong>{props.email}</strong>
+        </DropdownItem>
         <DropdownItem
           key="signout"
           className="text-danger"
