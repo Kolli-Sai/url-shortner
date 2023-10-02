@@ -45,7 +45,7 @@ const UrlForm = (props: Props) => {
       } else {
         console.log({ responseData: data });
         toast.success("Url created successfully");
-        setSnippet(data?.alias);
+        setSnippet(data?.alias || "");
         reset();
       }
     } catch (error: any) {

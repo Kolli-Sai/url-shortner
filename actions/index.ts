@@ -32,7 +32,7 @@ export const createUrl = async ({
           createdBy: session?.user?.id as string,
         },
       });
-      revalidatePath("/dashboard");
+      revalidatePath("/dashboard", "page");
       return {
         success: true,
         data: createAlias,
@@ -92,7 +92,7 @@ export const deleteUrl = async (id: string) => {
         id,
       },
     });
-    revalidatePath("/dashboard/[urls]");
+    revalidatePath("/dashboard/[urls]", "page");
     return {
       success: true,
       data: deleteUrl,
