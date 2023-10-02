@@ -15,7 +15,7 @@ const Navbar = async (props: Props) => {
     <nav className=" flex gap-3 justify-between items-center py-6">
       <NextLink href={"/"} className="flex gap-1 items-center">
         <Image src={"/favicon-32x32.png"} alt="logo" width={32} height={32} />
-        <span className=" text-xl font-bold">URL Shortner</span>
+        <span className=" text-xl font-bold hidden sm:block">URL Shortner</span>
       </NextLink>
       <div className=" flex gap-3 items-center">
         <NextLink href={"/dashboard"} className=" text-blue-600 underline">Dashboard</NextLink>

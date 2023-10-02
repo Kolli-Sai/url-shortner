@@ -12,7 +12,7 @@ const HomePage = async(props: Props) => {
   }
   return (
     <>
-      <section className="text-gray-600 body-font">
+      <section className="text-gray-600 body-font my-10">
         <div className="container mx-auto flex px-5 items-center justify-center flex-col">
           <Image
             className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
