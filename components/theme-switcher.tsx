@@ -21,7 +21,7 @@ export function ThemeSwitcher() {
     } else {
       setTheme("light");
     }
-  }, [isSelected]);
+  }, [isSelected, setTheme]);
 
   if (!mounted) return null;
   return (
