@@ -89,6 +89,7 @@ const UrlForm = (props: Props) => {
         <Link
           href={`${baseUrl}/api/redirect/?alias=${snippet}`}
           isExternal
+          color="success"
           showAnchorIcon
         >{`${baseUrl}/api/redirect/?alias=${snippet}`}</Link>
       )}
