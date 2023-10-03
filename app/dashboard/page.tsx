@@ -4,7 +4,12 @@ import { redirect } from "next/navigation";
 import React from "react";
 import NextLink from "next/link";
 import { MoveRight } from "lucide-react";
+import { Metadata } from "next";
 type Props = {};
+
+export const metadata:Metadata = {
+  title: "Dashboard",
+};
 
 const DashboardPage = async (props: Props) => {
   const { session } = await getAuthSession();
