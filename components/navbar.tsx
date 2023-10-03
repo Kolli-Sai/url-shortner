@@ -5,11 +5,11 @@ import NavbarAvatar from "./navbar-avatar";
 import NavbarSignin from "./navbar-signin";
 import { ThemeSwitcher } from "./theme-switcher";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth-options";
+import { authOptions, getAuthSession } from "@/lib/auth-options";
 type Props = {};
 
 const Navbar = async (props: Props) => {
-  const session = await getServerSession(authOptions);
+  const { session } = await getAuthSession();
 
   return (
     <nav className=" flex gap-3 justify-between items-center py-6">
