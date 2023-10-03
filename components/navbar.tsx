@@ -24,13 +24,13 @@ const Navbar = async (props: Props) => {
           Dashboard
         </NextLink>
         <ThemeSwitcher />
-        {session && (
+        {session?.user.id && (
           <NavbarAvatar
             email={session.user.email as string}
             image={session.user.image as string}
           />
         )}
-        {!session && <NavbarSignin />}
+        {!session?.user.id && <NavbarSignin />}
       </div>
     </nav>
   );
