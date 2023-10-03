@@ -1,4 +1,4 @@
-'use server'
+"use server";
 import React from "react";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -11,6 +11,9 @@ type Props = {};
 
 const Navbar = async (props: Props) => {
   const { session } = await getAuthSession();
+  console.log({
+    navbarSession: session,
+  });
 
   return (
     <nav className=" flex gap-3 justify-between items-center py-6">
