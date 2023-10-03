@@ -1,4 +1,4 @@
-"use server";
+"use client";
 import React from "react";
 import NextLink from "next/link";
 import Image from "next/image";
@@ -7,10 +7,12 @@ import NavbarSignin from "./navbar-signin";
 import { ThemeSwitcher } from "./theme-switcher";
 import { getServerSession } from "next-auth/next";
 import { authOptions, getAuthSession } from "@/lib/auth-options";
+import { useSession } from "next-auth/react";
 type Props = {};
 
-const Navbar = async (props: Props) => {
-  const { session } = await getAuthSession();
+const Navbar = (props: Props) => {
+  // const { session } = await getAuthSession();
+  const { data: session } = useSession();
   console.log({
     navbarSession: session,
   });
