@@ -14,11 +14,13 @@ const Navbar = async (props: Props) => {
   return (
     <nav className=" flex gap-3 justify-between items-center py-6">
       <NextLink href={"/"} className="flex gap-1 items-center">
-        <Image src={"/favicon-32x32.png"} alt="logo" width={32} height={32} />
-        <span className=" text-xl font-bold hidden sm:block">URL Shortner</span>
+        {/* <Image src={"/favicon-32x32.png"} alt="logo" width={32} height={32} /> */}
+        <span className=" text-xl font-bold hidden sm:block underline underline-offset-4 text-primary  ">URL Shortner</span>
       </NextLink>
       <div className=" flex gap-3 items-center">
-        <NextLink href={"/dashboard"} className=" text-blue-600 underline">Dashboard</NextLink>
+        <NextLink href={"/dashboard"} className="text-primary underline">
+          Dashboard
+        </NextLink>
         <ThemeSwitcher />
         {session ? (
           <NavbarAvatar

@@ -61,6 +61,7 @@ const UrlForm = (props: Props) => {
         labelPlacement="outside"
         label="URL"
         isRequired
+        color="primary"
         variant="bordered"
         isInvalid={!!errors.url}
         errorMessage={errors?.url?.message}
@@ -69,6 +70,7 @@ const UrlForm = (props: Props) => {
         {...register("alias")}
         type="text"
         label="Alias"
+        color="primary"
         labelPlacement="outside"
         variant="bordered"
         isInvalid={!!errors.alias}
