@@ -3,7 +3,12 @@ import Image from "next/image";
 import SignoutButton from "@/components/signout-button";
 import { getAuthSession } from "@/lib/auth-options";
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
 type Props = {};
+
+export const metadata: Metadata = {
+  title: "Signout",
+};
 
 const SignoutPage = async (props: Props) => {
   const { session } = await getAuthSession();

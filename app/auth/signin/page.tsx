@@ -1,15 +1,19 @@
-import SigninWithGithubButton from '@/components/signin-with-github-button';
-import { getAuthSession } from '@/lib/auth-options';
-import { Button } from '@nextui-org/button';
-import Image from 'next/image';
-import { redirect } from 'next/navigation';
-import React from 'react'
+import SigninWithGithubButton from "@/components/signin-with-github-button";
+import { getAuthSession } from "@/lib/auth-options";
+import { Button } from "@nextui-org/button";
+import { Metadata } from "next";
+import Image from "next/image";
+import { redirect } from "next/navigation";
+import React from "react";
 
+export const metadata: Metadata = {
+  title: "Signin",
+};
 
-type Props = {}
+type Props = {};
 
 const SigninPage = async (props: Props) => {
-  const { session } = await getAuthSession()
+  const { session } = await getAuthSession();
   if (session) {
     return redirect("/dashboard");
   }
@@ -21,23 +25,20 @@ const SigninPage = async (props: Props) => {
         </div>
         <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center text-foreground-700">
           <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium">
-           Sign in to your account
+            Sign in to your account
           </h1>
           <p className="mb-8 leading-relaxed">
             To use this project you need to sign in to your account
           </p>
           <div className="flex w-full md:justify-start justify-center items-end">
             <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4">
-             <SigninWithGithubButton/>
+              <SigninWithGithubButton />
             </div>
-         
           </div>
-         
-         
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default SigninPage
+export default SigninPage;
