@@ -20,7 +20,7 @@ const SigninWithGithubButton = (props: Props) => {
       if (login?.error) {
         throw new Error(login.error);
       } else {
-        toast.success("Signed in successfully");
+        // toast.success("Signed in successfully");
       }
     } catch (error: any) {
       console.log({ loginErrorMessage: error.message });

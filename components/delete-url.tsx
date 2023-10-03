@@ -9,10 +9,13 @@ type Props = {
 };
 
 const DeleteUrl = (props: Props) => {
+  const [isLoading, setIsLoading] = React.useState(false);
   const handleDelete = async () => {
     console.log("delete");
+    setIsLoading(true);
     try {
       const { data, error, success } = await deleteUrl(props.id);
+      setIsLoading(false);
       if (error) {
         console.log(error);
         toast.error(error);
@@ -25,7 +28,13 @@ const DeleteUrl = (props: Props) => {
   };
   return (
     <>
-      <Button isIconOnly onClick={handleDelete} variant="light" color="danger">
+      <Button
+        isLoading={isLoading}
+        isIconOnly
+        onClick={handleDelete}
+        variant="light"
+        color="danger"
+      >
         <Trash />
       </Button>
     </>

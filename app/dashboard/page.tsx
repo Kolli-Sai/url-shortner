@@ -16,7 +16,7 @@ const DashboardPage = async (props: Props) => {
       <div className=" flex justify-center w-500">
         <UrlForm />
       </div>
-      <div className=" flex justify-center gap-2 text-blue-600 underline ">
+      <div className=" flex justify-center gap-2 text-primary underline ">
         <NextLink href="/dashboard/urls" className="flex gap-2 ">
           View All
         <MoveRight className=" w-6 h-6 ml-2" />
