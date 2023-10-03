@@ -30,6 +30,22 @@ export const metadata: Metadata = {
     telephone: false,
   },
   category: "technology",
+  openGraph: {
+    title: "Home Page",
+    description: "A simple url shortener made with Next.js and Prisma",
+    url: "https://url-shortner-drab-delta.vercel.app/",
+    siteName: "Url Shortener",
+
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Home Page",
+    description: "A simple url shortener made with Next.js and Prisma",
+    // siteId: "1467726470533754880",
+    creator: "@saik98187",
+  },
 };
 
 export default function RootLayout({
