@@ -1,12 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Open_Sans } from "next/font/google";
 import { Providers } from "./providers";
 import Navbar from "@/components/navbar";
 import Layout from "@/components/layout";
 import { Divider } from "@nextui-org/divider";
 import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://url-shortner-drab-delta.vercel.app/"),
@@ -55,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body className={openSans.className}>
         <Providers>
           <Toaster expand={false} richColors position="top-center" />
           <Layout>

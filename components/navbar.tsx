@@ -8,6 +8,7 @@ import { ThemeSwitcher } from "./theme-switcher";
 import { getServerSession } from "next-auth/next";
 import { authOptions, getAuthSession } from "@/lib/auth-options";
 import { useSession } from "next-auth/react";
+import NavbarMenu from "./navbar-menu";
 type Props = {};
 
 const Navbar = (props: Props) => {
@@ -19,14 +20,24 @@ const Navbar = (props: Props) => {
 
   return (
     <nav className=" flex gap-3 justify-between items-center py-6">
-      <NextLink href={"/"} className="flex gap-1 items-center">
-        {/* <Image src={"/favicon-32x32.png"} alt="logo" width={32} height={32} /> */}
-        <span className=" text-xl font-bold hidden sm:block underline underline-offset-4 text-primary  ">
-          URL Shortner
-        </span>
-      </NextLink>
+      <div>
+        <div className=" sm:hidden">
+          <NavbarMenu />
+        </div>
+        <div className=" hidden sm:block">
+          <NextLink href={"/"} className="">
+            <span className=" text-xl font-bold  underline underline-offset-4 text-primary  ">
+              URL Shortner
+            </span>
+          </NextLink>
+        </div>
+      </div>
+
       <div className=" flex gap-3 items-center">
-        <NextLink href={"/dashboard"} className="text-primary underline">
+        <NextLink
+          href={"/dashboard"}
+          className="text-primary underline hidden sm:block"
+        >
           Dashboard
         </NextLink>
         <ThemeSwitcher />
