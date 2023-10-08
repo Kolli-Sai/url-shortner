@@ -7,6 +7,7 @@ import { Snippet } from "@nextui-org/snippet";
 import { baseUrl } from "@/lib/base-url";
 import DeleteUrl from "@/components/delete-url";
 import { Metadata } from "next";
+import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
 type Props = {};
 
 export const metadata: Metadata = {
@@ -32,22 +33,45 @@ const UrlsPage = async (props: Props) => {
         <div className=" max-w-md flex flex-col gap-6">
           {data?.map((url) => {
             return (
-              <div
+              <Card
                 key={url.id}
-                className=" bg-rose-100/10 rounded-xl p-4 m-2 flex flex-col gap-2"
+                className="  rounded-xl p-4 m-2 flex flex-col gap-2"
               >
-                <Link href={`${url.url}`} isExternal showAnchorIcon>
+                {/* <Link href={`${url.url}`} isExternal showAnchorIcon>
                   {url.url}
-                </Link>
-                <Link
+                </Link> */}
+                <div>
+                  <span className="text-foreground">Shorten Url : </span>
+                  <Link
+                    href={`${baseUrl}/api/redirect/?alias=${url.alias}`}
+                    isExternal
+                    showAnchorIcon
+                    className=" line-clamp-3"
+                  >
+                    {`${baseUrl}/api/redirect/?alias=${url.alias}`}
+                  </Link>
+                </div>
+                {/* <Link
                   href={`
                 ${baseUrl}/api/redirect/?alias=${url.alias}
                 `}
                   isExternal
                   showAnchorIcon
-                >{`${baseUrl}/api/redirect/?alias=${url.alias}`}</Link>
-                <DeleteUrl id={url.id} />
-              </div>
+                >{`${baseUrl}/api/redirect/?alias=${url.alias}`}</Link> */}
+                <div className=" flex justify-between items-center">
+                  <div className=" text-foreground">
+                    CreatedAt :&nbsp;
+                    <span className="text-success">
+                      {url.createdAt
+                        .toUTCString()
+                        .split(" ")
+                        .slice(0, 4)
+                        .join(" ")}
+                    </span>
+                  </div>
+                  <DeleteUrl id={url.id} />
+                </div>
+              </Card>
             );
           })}
         </div>

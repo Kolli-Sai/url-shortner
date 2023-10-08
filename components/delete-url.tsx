@@ -30,12 +30,12 @@ const DeleteUrl = (props: Props) => {
     <>
       <Button
         isLoading={isLoading}
-        isIconOnly
+        // isIconOnly
         onClick={handleDelete}
         variant="light"
         color="danger"
       >
-        <Trash />
+        Delete
       </Button>
     </>
   );
